@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    
+     <title>H&M | Online Fashion</title>
+    <style>
+     
+      .navbar-brand > img {
+        width: 150px;
+        height: 100px;
+      }
+      @media (min-width: 992px)
+      {
+        .navbar-expand-lg .navbar-collapse {
+        flex-direction: column;
+      }
+    }
+    .nav-item > a, .nav-item > i{
+      color: white !important;
+    } 
+    
+    #main {
+      position: relative;
+    }
+    #cart ::after {
+      content: "2";
+      position: absolute;
+      color: white;
+      bottom: 20px;
+      right: -6px;
+      background-color: red ;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .nav {
+      justify-content: space-evenly;
+    }
+    .carousel-item > img {
+      width: 100%;
+      height: 300px;
+    }
+    .logbtn {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+     }
+
+     .main-img >div > img {
+      width: 300px;
+      height: 300px;
+     }
+
+     #album-img {
+      position: relative;
+     }
+     #album-btn {
+      position: relative;
+      bottom: 15%;
+      left : 20%;
+     }
+
+     .mycolumn {
+      column-count: 4;
+      column-rule: 1px solid gray;
+     }
+     .carousel-control-next-icon, .carousel-control-prev-icon{
+      background-color: grey;
+     }
+
+     #mypartner > div > img {
+      width: 200px;
+      height: 200px;
+     }
+    
+      .myfooter {
+        column-count : 4
+      }
+      .myfooter > div > h3 ,p,hr {
+        color: white;
+      }
+
+      @media (max-width:768px){
+        .myfooter {
+          display: none;
+        }
+       
+      }
+      
+      @media(max-width:425px){
+        #offcanvasRight{
+          display: none;
+        }
+      }
+
+      .msgbg{
+       text-align: end;
+      }
+
+    
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+     
+      
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="" width="30" height="24">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Order Entry
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Login</a>
+        </li>
+        <li class="nav-item" id="main">
+         
+          <a class="nav-link active" data-bs-toggle="offcanvas"  aria-current="page" href="#offcanvasExample" id="cart" aria-controls="offcanvasExample"> <i class="fa fa-shopping-cart"  style="font-size:18px">Viewcart </i></a>
+          
+          
+        </li>
+        
+       
+      </ul>
+      <form class="d-flex ms-auto">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+ </div><!--main-->
+
+ <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">My Cart ||  2 items</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="row">
+      <div col-6>
+        <figure class="figure">
+          <img src="cat.jpg" style="width: 250px; height: 150px;" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">surprise gift fof cats image!!!</figcaption>
+        </figure>
+      </div>
+      <div col-6>
+        <hr>
+        <figure class="figure">
+          <img src="dog.jpg"   style="width: 250px; height: 150px;" class="figure-img img-fluid rounded" alt="...">
+          <figcaption class="figure-caption">surprise gift fof Dog image!!!</figcaption>
+        </figure>
+      </div>
+  </div><!--row-->
+    <div class="dropdown mt-3">
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary bg-danger" type="button">Proceed to Check Out</button>
+        <button class="btn btn-primary bg-secondary" type="button">Continue Shopping</button>
+      </div>
+      
+    </div>
+  </div>
+</div> <!--navbar-->
+<div class="container-fluid">
+
+  <ul class="nav bg-danger">
+  
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">SPORTS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">GYM & FITNESS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">OUTDOOR</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">PE SKILLS & GAMES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">NEW</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">CLEARANCE</a>
+    </li>
+  </ul>
+</div>
+<div class="container-fluid">
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="1.webp" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Kid's collection</h5>
+          <p>a loose garment was a part of the bride's attire made of simple strip of cloth.</p>
+          <button type="button" class="btn btn-danger">Shop NOw</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="2.avif" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Womens collection</h5>
+          <p>Different patterns and styles of traditional embroidery are used to decorate the aiushi mazumder</p>
+          <button type="button" class="btn btn-danger">Shop NOw</button>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Men Colloection</h5>
+          <p>The Vedas have stated many clothes; indeed, those all were unsewn clothes and wraps in varied ways.</p>
+          <button type="button" class="btn btn-danger">Shop NOw</button>
+        </div>
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container-fluid bg-danger logbtn p-2">
+    <p class="text-start h1  text-white fw-bold fs-1"> <i class='fa fa-user-circle' style='font-size:24px'>&nbsp; DO YOU HAVE AN ACCOUNT WITH US</i></p>
+    <button type="button" class="btn btn-light btn-sm"> <p class="text-start h5  text-danger fw-bold fs-3">LOGIN HERE</p></button>
+  </div><!--account with us -->
+
+  <div class="conatiner"><!--outter container-->
+    <div class="container"><!--inner container-->
+    <div class="row main-img">
+      <div class="col-12 col-md-6 col-lg-4 ">
+    <img src="main1.webp" class="img-thumbnail" id="album-img" alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4">
+    <img src="main2.webp" class="img-thumbnail"  id="album-img" alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4">
+    <img src="main3.jpg" class="img-thumbnail"  id="album-img" alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4">
+    <img src="main4.jpg" class="img-thumbnail"  id="album-img" alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4">
+    <img src="main5.webp" class="img-thumbnail"  id="album-img" alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  <div class="col-12 col-md-6 col-lg-4">
+    <img src="main6.webp" class="img-thumbnail"   id="album-img"alt="...">
+    <button type="button" class="btn btn-danger fs-5 fw-bold" id="album-btn">SHOP NOW</button>
+  </div>
+  </div><!--row-->
+</div><!--inner container-->
+  </div><!--outter container-->
+
+  <p class="h1 text-center fw-bold">FEATURED PRODUCTS </p>
+    <div class="container">
+     
+
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+         
+          
+            <div class="carousel-item active mycolumn"  data-bs-interval="10000">
+            <img src="shoe1.png" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            
+            <p class="text-danger fs-5 fw-bolder">save 14%</p>
+            <p class="text-danger fs-5 fw-bolder" >$24.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$28.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+            
+            <img src="shoe2.avif" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+              <p class="text-danger fs-5 fw-bolder">save 24%</p>
+            <p class="text-danger fs-5 fw-bolder" >$14.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$18.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+
+            <img src="shoe3.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 11%</p>
+            <p class="text-danger fs-5 fw-bolder" >$29.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$20.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+            
+            <img src="shoe4.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 42%</p>
+            <p class="text-danger fs-5 fw-bolder" >$04.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$08.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+          </div>
+          <div class="carousel-item mycolumn" data-bs-interval="2000">
+            <img src="shoe5.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 34%</p>
+            <p class="text-danger fs-5 fw-bolder" >$64.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$18.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+            
+            <img src="shoe6.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 54%</p>
+            <p class="text-danger fs-5 fw-bolder" >$14.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$28.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+            
+            <img src="shoe7.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 34%</p>
+            <p class="text-danger fs-5 fw-bolder" >$64.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$08.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+
+            <img src="shoe8.jpg" class="d-block w-100" alt="...">
+            <p class="text-center">branded shoes</p>
+            <p class="text-danger fs-5 fw-bolder">save 14%</p>
+            <p class="text-danger fs-5 fw-bolder" >$24.90(Ex GST)</p>
+            <p>was<span class="text-decoration-line-through">$28.50</span></p>
+            <button type="button" class="btn btn-danger">BUY</button>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    </div><!--container-->
+    <div class="container-fluid mt-4">
+      <p class="text-white bg-danger text-center fs-3 fw-bolder h1">OUR PARTNER</p>
+      <div class="row" id="mypartner">
+        
+        <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner1.jpg" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner2.webp" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner3.jpg" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner4.png" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner5.jpg" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner6.png" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner7.jpg" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner8.png" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner9.png" class="img-thumbnail" alt="...">
+         </div>
+         <div class="col-6 col-md-4 col-lg-3 mb-2">
+          <img src="partner10.png" class="img-thumbnail" alt="...">
+         </div>
+      </div><!--partner row-->
+    </div><!--our partner-->
+
+
+    <div class="container-fluid bg-danger">
+      <div class="container">
+      <div class="myfooter">
+
+        <div>
+          <h3>Get to know us</h1>
+          <hr>
+          <p>H&M</p>
+          <p>Career</p>
+          <p>Sports partner</p>
+          <p>Our foundation</p>
+        </div><!--footerpara-->
+        <div >
+          <h3>customer Service</h1>
+          <hr>
+          <p>Contact Us</p>
+          <p>Warranty</p>
+          <p>FAQ</p>
+          <p>Delivery </p>
+        </div><!--footerpara-->
+        <div>
+          <h3>Our Range</h1>
+          <hr>
+          <p>About Us</p>
+          <p>Request</p>
+          <p>Catalogue</p>
+          <p>Warranty</p>
+          
+        </div><!--footerpara-->
+        <div >
+          <h3>Stay informed</h1>
+          <hr>
+          <p>Sign up for news, events and product offers</p>
+          <p>Privacy Policy</p>
+          <p>Terms and Conditions</p>
+          <p>Refunds and Returns</p>
+        </div><!--footerpara-->
+    
+      </div><!--footer container-->
+    </div>
+
+      <div class="container"><!--offcanvas-->
+    
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          
+          <div class="offcanvas-header">
+            <h4 id="offcanvasRightLabel">Messenger</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body mt-4">
+            <div id="yoursapce">
+                <h6>hello user...</h6>
+                <h6>how can i help you???</h6> 
+            </div>
+            <div id="conversation">
+            </div>
+            <div class="mysapce d-flex mt-5">
+              <input type="text" id="inputtext" class="form-control" aria-describedby="#">
+              <button type="button" class="btn btn-success btn-md" id="sender">Send</button>
+            </div>
+      
+          </div>
+        </div>
+      </div><!--offcanvas-->
+
+
+</div><!--main body-->
+
+
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+    var bsOffcanvas2 = new bootstrap.Offcanvas(offcanvasRight)
+    bsOffcanvas2.show()
+})
+
+  let x = document.querySelector("#sender");
+    x.addEventListener("click",()=> {
+      let q = document.querySelector("#inputtext");
+  let y = q.value;
+  let target = document.querySelector("#conversation");
+  let element = document.createElement("h6");
+  let text = document.createTextNode(y);
+  element.appendChild(text);
+  target.appendChild(element);
+  target.classList.add("msgbg");
+  q.value = "";
+ 
+
+})
+
+
+</script>
+</body>    
+</html>

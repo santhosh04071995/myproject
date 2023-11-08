@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <style>
+    #container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: red;
+  top: 75px;
+    left: 75px;
+}
+ input {
+  /* margin-top: 5rem;
+    margin-left: 0.5rem; */
+    width: 22px;
+}
+
+ </style>
+   <body> 
+    <h1> we are arraiving at</h1> 
+    <h1 style="color: red;">12: 10 : 59</h1> 
+    <form>
+      <input type="name" id="hr"> <strong>:</strong>
+      <input type="name" id="min"> <strong>:</strong>
+      <input type="name" id="sec">
+    </form>
+    <h1>are left here</h1>
+    <p id="demo"></p>
+  </body>
+ 
+ <script type="text/javascript">
+    
+    setInterval(myfunc,1);
+    function myfunc()
+    {
+      let currenthour= 12,currentminute=10,currentsec=59;
+      
+      const d = new Date();
+      document.querySelector("#hr").value= currenthour - d.getHours();
+      document.querySelector("#min").value=d.getMinutes()- currentminute;
+      document.querySelector("#sec").value= currentsec-d.getSeconds();
+    }
+       
+  </script>
+  
+ 
+</html>
+

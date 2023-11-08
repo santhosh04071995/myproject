@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+   <style>
+    #container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: red;
+  top: 75px;
+    left: 75px;
+}
+ input {
+  margin-top: 5rem;
+    margin-left: 0.5rem;
+}
+
+ </style>
+   <body> 
+    <div id="container">
+      <input type="text" value="orange" id="name" name="name">
+    </div>
+  <button>Random color</button>
+    <p id="demo"></p>
+  </body>
+ 
+ <script type="text/javascript">
+    let x = ["Indigo","HotPink","GreenYellow","FireBrick","LawnGreen","LightSeaGreen",
+              "Magenta","Maroon","Olive","OrangeRed"]
+    document.querySelector("button").addEventListener("click",function(){
+     
+      let  i = Math.floor((Math.random()*10));
+      document.querySelector("#name").value = "the color is "+x[i];
+      document.querySelector("#demo").innerHTML = "the color is "+x[i];
+      document.querySelector("#container").style.background = x[i];
+})
+       
+  </script>
+  
+ 
+</html>
+

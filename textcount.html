@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <style>
+    #container {
+      top: 5rem;
+    left: 25rem;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: rgb(233, 233, 229);
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: red;
+  top: 75px;
+    left: 75px;
+}
+input{
+  width: 500px;
+  height: 100px;
+}
+h1{
+  color: rgb(38, 0, 255);
+}
+ </style>
+   <body>
+    <h1>write a story with words not greater  than 10</h1> 
+    <input type="text" id="txt">
+   <h2>your word :  <p id="demo"></p></h2>
+   </body>
+ 
+ <script type="text/javascript">
+
+  document.querySelector("input").addEventListener("focus",function(){
+    setInterval(myfunc,500);
+  })
+  function myfunc()
+  {
+   let x = document.querySelector("#txt").value.length;
+   document.querySelector("#demo").innerHTML=x;
+   if(x>=10)
+   {
+    document.querySelector("#txt").disabled = true;
+   }
+  }
+  
+
+  </script>
+  
+ 
+</html>
+

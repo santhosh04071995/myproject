@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+   <style>
+    #container {
+      top: 5rem;
+    left: 25rem;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: rgb(233, 233, 229);
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background: red;
+  top: 75px;
+    left: 75px;
+}
+input{
+  width: 500px;
+  height: 100px;
+}
+h1{
+  color: rgb(38, 0, 255);
+}
+ </style>
+   <body>
+   <input type="text" id="result" name="result" value="0"><br>
+   
+   <button id="one" name="one" value="1">1</button>
+   <button id="two" name="two" value="2">2</button><br>
+   
+   <button id="three" name="three" value="3">3</button>
+   <button id="four" name="four" value="4">4</button><br>
+   
+   <button id="five" name="five" value="5">5</button>
+   <button id="six" name="six" value="6">6</button><br>
+   
+   <button id="seven" name="seven" value="7">7</button>
+   <button id="eight" name="eight" value="8">8</button><br>
+   
+   <button id="nine" name="nine" value="9">9</button>
+   <button id="zero" name="zero" value="0">0</button><br>
+  
+   <button id="add" name="add" value="+">+</button>
+   <button id="minus" name="minus" value="-">-</button>
+   <button id="star" name="star" value="*">*</button>
+   <button id="divide" name="divide" value="/">/</button><br>
+   
+   <button id="equal" name="equal" >=</button>
+
+   <button type="reset" id="reset" name="reset"  value="0" >AC</button>
+   
+  </body>
+ 
+ <script type="text/javascript">
+   let z = document.querySelector("#result");
+   let final= 0;
+ 
+  
+   document.querySelector("#reset").addEventListener("click",function(){
+   z.value = "0";
+  })
+
+    document.querySelector("#one").addEventListener("click",function(){
+    let valueOne = document.querySelector("#one").value;
+    if(z.value == 0)
+    {
+      z.value = valueOne;
+
+    }
+    else
+    {
+      z.value += valueOne;
+    }
+   })
+
+  document.querySelector("#two").addEventListener("click",function(){
+    let valueTwo = document.querySelector("#two").value;
+    if(z.value == 0)
+    {
+      z.value = valueTwo;
+
+    }
+    else
+    {
+      z.value += valueTwo;
+    }
+  })
+
+  document.querySelector("#three").addEventListener("click",function(){
+    let valueThree = document.querySelector("#three").value;
+    if(z.value == 0)
+    {
+      z.value = valueThree;
+
+    }
+    else
+    {
+      z.value += valueThree;
+    }
+  })
+  document.querySelector("#four").addEventListener("click",function(){
+    let valueFour = document.querySelector("#four").value;
+    if(z.value == 0)
+    {
+      z.value = valueFour;
+
+    }
+    else
+    {
+      z.value += valueFour;
+    }
+  })
+  document.querySelector("#five").addEventListener("click",function(){
+    let valueFive = document.querySelector("#five").value;
+    if(z.value == 0)
+    {
+      z.value = valueFive;
+
+    }
+    else
+    {
+      z.value += valueFive;
+    }
+  })
+  document.querySelector("#six").addEventListener("click",function(){
+    let valueSix = document.querySelector("#six").value;
+    if(z.value == 0)
+    {
+      z.value = valueSix;
+
+    }
+    else
+    {
+      z.value += valueSix;
+    }
+  })
+  document.querySelector("#seven").addEventListener("click",function(){
+    let valueSeven = document.querySelector("#seven").value;
+    if(z.value == 0)
+    {
+      z.value = valueSeven;
+
+    }
+    else
+    {
+      z.value += valueSeven;
+    }
+  })
+  document.querySelector("#eight").addEventListener("click",function(){
+    let valueEight = document.querySelector("#eight").value;
+    if(z.value == 0)
+    {
+      z.value = valueEight;
+
+    }
+    else
+    {
+      z.value += valueEight;
+    }
+  })
+  document.querySelector("#nine").addEventListener("click",function(){
+    let valueNine = document.querySelector("#nine").value;
+    if(z.value == 0)
+    {
+      z.value = valueNine;
+
+    }
+    else
+    {
+      z.value += valueNine;
+    }
+  })
+  document.querySelector("#zero").addEventListener("click",function(){
+    let valueZero = document.querySelector("#zero").value;
+    if(z.value == 0)
+    {
+      z.value = valueZero;
+
+    }
+    else
+    {
+      z.value += valueZero;
+    }
+  })
+
+  document.querySelector("#add").addEventListener("click",function(){
+    let addition = document.querySelector("#add").value;
+    z.value += addition;
+  })
+  document.querySelector("#minus").addEventListener("click",function(){
+    let substract = document.querySelector("#minus").value;
+    z.value += substract;
+  })
+  document.querySelector("#star").addEventListener("click",function(){
+    let multiplication = document.querySelector("#star").value;
+    z.value += multiplication;
+  })
+  document.querySelector("#divide").addEventListener("click",function(){
+    let division = document.querySelector("#divide").value;
+    z.value += division;
+  })
+
+  document.querySelector("#equal").addEventListener("click",function(){
+   final = eval(z.value);
+   z.value=final;
+  })
+
+
+  </script>
+  
+ 
+</html>
+
